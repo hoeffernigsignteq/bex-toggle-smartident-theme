@@ -1,0 +1,37 @@
+{
+  "name": "bex-toggle-smartident-theme",
+  "description": "Browser extension to toggle SmartIdent custom branding",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm run icons:generate && npm run build:chrome && npm run build:firefox",
+    "build:chrome": "wxt build -b chrome",
+    "build:firefox": "wxt build -b firefox",
+    "compile": "vue-tsc --noEmit",
+    "dev": "wxt",
+    "dev:chrome": "wxt -b chrome",
+    "dev:firefox": "wxt -b firefox",
+    "icons:generate": "node scripts/generate-icons.mjs",
+    "postinstall": "wxt prepare",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "zip": "wxt zip",
+    "zip:chrome": "wxt zip -b chrome",
+    "zip:firefox": "wxt zip -b firefox"
+  },
+  "dependencies": {
+    "vue": "^3.5.27"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "@wxt-dev/module-vue": "^1.0.3",
+    "happy-dom": "^20.0.8",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.2.4",
+    "wxt": "^0.20.18"
+  }
+}
