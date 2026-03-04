@@ -21,18 +21,11 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install Dependencies
-        run: npm ci --ignore-scripts
-
-      - name: Work Around npm Optional Dependency Bug (Linux Native Binaries)
-        run: |
-          npm install --no-save \
-            @rollup/rollup-linux-x64-gnu \
-            lightningcss-linux-x64-gnu \
-            @tailwindcss/oxide-linux-x64-gnu
-
-      - name: Run Postinstall
-        run: npm run postinstall
+      # We intentionally use `npm install` (not `npm ci`) in CI here because
+      # this project depends on optional native packages (esbuild/rollup/lightningcss),
+      # and `npm ci` has intermittently skipped required Linux optional binaries.
+      - name: Install Dependencies (npm install for optional native binaries)
+        run: npm install
 
       - name: Compile
         run: npm run compile
