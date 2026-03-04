@@ -24,8 +24,12 @@ jobs:
       - name: Install Dependencies
         run: npm ci --ignore-scripts
 
-      - name: Work Around npm Optional Dependency Bug (Rollup Linux Binary)
-        run: npm install --no-save @rollup/rollup-linux-x64-gnu
+      - name: Work Around npm Optional Dependency Bug (Linux Native Binaries)
+        run: |
+          npm install --no-save \
+            @rollup/rollup-linux-x64-gnu \
+            lightningcss-linux-x64-gnu \
+            @tailwindcss/oxide-linux-x64-gnu
 
       - name: Run Postinstall
         run: npm run postinstall
