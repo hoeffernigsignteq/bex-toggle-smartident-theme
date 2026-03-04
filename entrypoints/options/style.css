@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* Brand Colors */
+  --color-brand-50: rgb(246 245 255);
+  --color-brand-100: rgb(232 231 254);
+  --color-brand-200: rgb(210 206 253);
+  --color-brand-300: rgb(178 172 252);
+  --color-brand-400: rgb(142 133 250);
+  --color-brand-500: rgb(77 61 247);
+  --color-brand-600: rgb(57 39 246);
+  --color-brand-700: rgb(30 10 245);
+  --color-brand-800: rgb(25 9 211);
+  --color-brand-900: rgb(17 6 137);
+  --color-brand-950: rgb(5 0 63);
+
+  /* Neutral Colors */
+  --color-neutral-50: rgb(244 244 246);
+  --color-neutral-100: rgb(233 233 236);
+  --color-neutral-200: rgb(211 212 218);
+  --color-neutral-300: rgb(180 182 192);
+  --color-neutral-400: rgb(144 147 162);
+  --color-neutral-500: rgb(91 94 109);
+  --color-neutral-600: rgb(81 84 97);
+  --color-neutral-700: rgb(72 74 86);
+  --color-neutral-800: rgb(60 62 72);
+  --color-neutral-900: rgb(37 38 44);
+  --color-neutral-950: rgb(26 26 31);
+
+  /* Error Colors */
+  --color-error-50: rgb(255 245 247);
+  --color-error-100: rgb(255 230 234);
+  --color-error-200: rgb(255 204 213);
+  --color-error-300: rgb(255 169 184);
+  --color-error-400: rgb(254 123 147);
+  --color-error-500: rgb(254 26 67);
+  --color-error-600: rgb(234 1 44);
+  --color-error-700: rgb(203 1 38);
+  --color-error-800: rgb(173 1 32);
+  --color-error-900: rgb(117 1 22);
+  --color-error-950: rgb(55 0 10);
+
+  /* Success Colors */
+  --color-success-50: rgb(234 255 246);
+  --color-success-100: rgb(205 254 231);
+  --color-success-200: rgb(160 250 212);
+  --color-success-300: rgb(99 242 190);
+  --color-success-400: rgb(38 225 163);
+  --color-success-500: rgb(1 196 138);
+  --color-success-600: rgb(0 163 116);
+  --color-success-700: rgb(0 130 95);
+  --color-success-800: rgb(0 103 76);
+  --color-success-900: rgb(0 84 65);
+  --color-success-950: rgb(0 35 28);
+
+  /* Warning Colors */
+  --color-warning-50: rgb(255 245 240);
+  --color-warning-100: rgb(255 239 229);
+  --color-warning-200: rgb(255 216 194);
+  --color-warning-300: rgb(255 194 158);
+  --color-warning-400: rgb(255 168 117);
+  --color-warning-500: rgb(255 131 60);
+  --color-warning-600: rgb(255 97 5);
+  --color-warning-700: rgb(230 84 0);
+  --color-warning-800: rgb(189 69 0);
+  --color-warning-900: rgb(143 52 0);
+  --color-warning-950: rgb(48 17 0);
+}
+
+/*
+ * inline needed to reference existing color CSS variables
+ * @docs https://tailwindcss.com/docs/theme#referencing-other-variables
+ */
+@theme inline {
+  /* Base Colors */
+  --color-base-black: var(--color-black);
+  --color-base-white: var(--color-white);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-size: 16px;
+  }
+
+  html body {
+    font-size: 1rem; /* same as 100%, but anchored to 16px root */
+  }
+
+  body {
+    margin: 0;
+    color: var(--color-neutral-50);
+    background:
+      radial-gradient(circle at 12% 8%, rgb(77 61 247 / 25%), transparent 34%),
+      radial-gradient(circle at 88% 2%, rgb(254 26 67 / 18%), transparent 34%),
+      linear-gradient(168deg, var(--color-neutral-950) 0%, rgb(18 19 24) 100%);
+    font-family: 'IBM Plex Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 100% !important;
+  }
+}
