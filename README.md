@@ -83,11 +83,14 @@ Use this process whenever extension behavior changes and you want new install ar
 - `npm run test`
 - `npm run build`
 - `npm audit`
-5. Generate release assets:
-- `npm run zip:chrome`
-- `npm run zip:firefox`
-6. Upload `.output/bex-toggle-smartident-theme-<version>-chrome.zip` and
-   `.output/bex-toggle-smartident-theme-<version>-firefox.zip` to a GitHub Release for tag `v<version>`.
+5. Push your commit(s) to `main`.
+6. Create and push a release tag:
+- `git tag v<version>`
+- `git push origin v<version>`
+7. GitHub Actions will create the release automatically from the tag and upload:
+- `.output/bex-toggle-smartident-theme-<version>-chrome.zip`
+- `.output/bex-toggle-smartident-theme-<version>-firefox.zip`
+- If automation is unavailable, create the release manually on GitHub for `v<version>` and upload both files.
 
 ## Security Notes
 
@@ -159,4 +162,6 @@ Coverage includes:
 - [ ] `npm audit` reports no vulnerabilities
 - [ ] `npm run zip:chrome` created release zip
 - [ ] `npm run zip:firefox` created release zip
+- [ ] Commit(s) pushed to `main`
+- [ ] Tag `v<version>` pushed (`git push origin v<version>`)
 - [ ] GitHub Release published with both browser zips
