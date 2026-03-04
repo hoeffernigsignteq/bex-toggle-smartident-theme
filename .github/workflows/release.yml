@@ -34,7 +34,9 @@ jobs:
             @rollup/rollup-linux-x64-gnu \
             lightningcss-linux-x64-gnu \
             @tailwindcss/oxide-linux-x64-gnu \
-            @esbuild/linux-x64
+            @esbuild/linux-x64 \
+            @img/sharp-linux-x64 \
+            @img/sharp-libvips-linux-x64
 
       - name: Run Postinstall (WXT Prepare)
         run: npm run postinstall
