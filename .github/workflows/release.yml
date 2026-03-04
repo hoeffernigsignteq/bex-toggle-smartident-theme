@@ -21,11 +21,23 @@ jobs:
           node-version: 22
           cache: npm
 
-      # We intentionally use `npm install` (not `npm ci`) in CI here because
-      # this project depends on optional native packages (esbuild/rollup/lightningcss),
-      # and `npm ci` has intermittently skipped required Linux optional binaries.
-      - name: Install Dependencies (npm install for optional native binaries)
-        run: npm install
+      # Install dependencies without lifecycle scripts first. If postinstall runs
+      # immediately, toolchain binaries may be missing due npm optional-deps issues.
+      - name: Install Dependencies (without scripts)
+        run: npm install --ignore-scripts
+
+      # Explicitly install Linux-native optional binaries used by the toolchain.
+      # This is the common CI workaround for npm optional dependency resolution bugs.
+      - name: Install Linux Native Optional Dependencies
+        run: |
+          npm install --no-save \
+            @rollup/rollup-linux-x64-gnu \
+            lightningcss-linux-x64-gnu \
+            @tailwindcss/oxide-linux-x64-gnu \
+            @esbuild/linux-x64
+
+      - name: Run Postinstall (WXT Prepare)
+        run: npm run postinstall
 
       - name: Compile
         run: npm run compile
