@@ -10,7 +10,7 @@ export default defineConfig({
   manifest: ({ browser, manifestVersion }) => ({
     name: 'SmartIdent Branding Toggle',
     short_name: 'Branding Toggle',
-    description: 'Toggle SmartIdent custom branding stylesheet.',
+    description: 'Toggle SmartIdent custom branding styles.',
     permissions: ['storage', 'tabs', ...(browser === 'firefox' ? ['contextMenus'] : [])],
     host_permissions: [...SUPPORTED_MATCH_PATTERNS],
     commands: {

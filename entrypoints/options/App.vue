@@ -197,11 +197,11 @@ function setupShortcutRefreshHandlers(): void {
         </p>
         <h1 class="-mt-2 text-3xl font-bold">Allowed Hosts</h1>
         <p class="text-neutral-300">
-          The extension will only toggle
+          The extension will only toggle SmartIdent branding styles on URLs that match the
+          patterns listed below. This includes
           <code class="rounded bg-neutral-800/75 px-1 py-0.5 font-mono text-xs text-neutral-100"
             >#smartident-branding-css</code
-          >
-          on URLs that match the patterns listed below. It also disables inline
+          >, typography and focus-ring style elements, plus inline
           <code class="rounded bg-neutral-800/75 px-1 py-0.5 font-mono text-xs text-neutral-100"
             >--color-*</code
           >

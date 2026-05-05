@@ -303,7 +303,7 @@ function getActionStateForResult(result: ToggleBrandingResult): {
       return {
         text: '',
         color: '#4b5563',
-        title: 'No #smartident-branding-css stylesheet was found on this page.',
+        title: 'No SmartIdent branding styles were found on this page.',
       };
     case 'not_allowed':
       return {

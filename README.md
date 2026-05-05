@@ -2,7 +2,7 @@
 
 <img src="./assets/icons/toolbar-on.svg" width="96" alt="SmartIdent Branding Toggle ON icon" />
 
-Browser extension for Chrome and Firefox that toggles the SmartIdent custom branding stylesheet (`#smartident-branding-css`) and colors (applied to the `<html>` tag as CSS variables via inline style) in the active tab.
+Browser extension for Chrome and Firefox that toggles SmartIdent custom branding styles in the active tab.
 
 This is designed to quickly switch to the default Signteq theme when needed, e.g. to capture a screenshot of a bug with the default theme, and afterwards toggle branding back on.
 
@@ -12,7 +12,7 @@ This is designed to quickly switch to the default Signteq theme when needed, e.g
 - Options page shows the active shortcut and links to browser shortcut settings.
 - Firefox-only extension context menu includes an `Options` entry for faster access.
 - Icon state (ON/OFF/indeterminate) and error badge state (`ERR`) auto-refresh on tab activation and page load.
-- Disables both `#smartident-branding-css` and inline `<html>` `--color-*` variables.
+- Disables `#smartident-branding-css`, typography and focus-ring branding style elements, and inline `<html>` `--color-*` variables.
 - Current-tab-only behavior (no persistent per-tab state).
 - Runtime allowlist enforcement (editable in extension Options page).
 
@@ -105,7 +105,7 @@ Use this process whenever extension behavior changes and you want new install ar
 
 ## Functional Limits
 
-- This toggle restores the stylesheet and inline `<html>` `--color-*` variables only.
+- This toggle restores SmartIdent branding styles and inline `<html>` `--color-*` variables only.
 - Branding baked into content assets (for example Lottie animations) is not reverted.
 
 ## Defaults
@@ -149,7 +149,7 @@ Run:
 Coverage includes:
 
 - allowlist validation and URL matching
-- stylesheet toggle behavior for `#smartident-branding-css`
+- branding style toggle behavior for SmartIdent CSS, typography, and focus-ring elements
 - background orchestration logic for icon click and command paths
 
 ## Release Checklist
